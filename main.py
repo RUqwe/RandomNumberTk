@@ -1,0 +1,26 @@
+import tkinter
+import random
+def gen():
+	a = Lg.get()
+	b = Rg.get()
+	c = random.randint(a, b)
+	str(c)
+	RPLabel.configure(text=c)
+
+Window = tkinter.Tk()
+Lg = tkinter.IntVar()
+Rg = tkinter.IntVar()
+Window.geometry('1080x1920')
+RPLabel = tkinter.Label(text='Здесь должно быть число')
+EntryL = tkinter.Entry(width='10',  textvariable=Lg)
+Llabel =tkinter.Label(text='От:')
+EntryR = tkinter.Entry(width='10',  textvariable=Rg)
+Rlabel = tkinter.Label(text='До:')
+Button = tkinter.Button(text='Сгенерировать', command=gen)
+Button.grid(column='100', row='101')
+EntryR.place(x='659', y='200')
+Rlabel.place(x='580', y='200')
+EntryL.place(x='270', y='200')
+Llabel.place(x='200', y='200')
+RPLabel.grid(column='1200', row='101')
+tkinter.mainloop()
